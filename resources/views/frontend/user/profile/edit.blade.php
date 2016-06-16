@@ -29,6 +29,13 @@
                         @endif
 
                         <div class="form-group">
+                            {!! Form::label('signature', 'Signature', ['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-6">
+                                {!! Form::input('signature', 'signature', null, ['class' => 'form-control', 'placeholder' => 'Signature']) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 {!! Form::submit(trans('labels.general.buttons.save'), ['class' => 'btn btn-primary']) !!}
                             </div>

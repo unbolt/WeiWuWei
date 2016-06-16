@@ -20,7 +20,11 @@ class DatabaseSeeder extends Seeder
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         }
 
+        // Call all the boilerplate stuff
         $this->call(AccessTableSeeder::class);
+
+        // Make the custom roles for Wei Wu Wei
+        $this->call(WeiWuWeiRoleSeeder::class);
 
         if (env('DB_CONNECTION') == 'mysql') {
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');

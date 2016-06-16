@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Frontend\User;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\User\UpdateProfileRequest;
 use App\Repositories\Frontend\Access\User\UserRepositoryContract;
+use Jleagle\BattleNet\Warcraft;
 
 /**
  * Class ProfileController
@@ -31,4 +33,26 @@ class ProfileController extends Controller
         $user->updateProfile(access()->id(), $request->all());
         return redirect()->route('frontend.user.dashboard')->withFlashSuccess(trans('strings.frontend.user.profile_updated'));
     }
+
+    /**
+     * -- Character Search function
+     * -- Accepts a character name and a realm and searches for that character on the armoury
+     *
+     **/
+     public function characterSearch(Request $request)
+     {
+         $warcraft = new Warcraft(
+             env('BLIZZ_API_KEY'),
+             'EU',
+             'EN_GB'
+         );
+
+         $character = $warcraft->getCharacter('the-shatar', 'ritual');
+
+        print_r($character);
+
+         return 'yes';
+     }
+
+
 }

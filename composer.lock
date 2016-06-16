@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "78510c14c9e76f1053cff54ac99934e8",
-    "content-hash": "6df400137c20261486c482017fc2ff30",
+    "hash": "1aeaa3bbc2783b656cd600fa6a10a910",
+    "content-hash": "8ae8e58f8f3f863f7f233151b009f02b",
     "packages": [
         {
             "name": "arcanedev/log-viewer",
@@ -836,6 +836,97 @@
             "time": "2015-12-05 17:17:57"
         },
         {
+            "name": "jleagle/battlenet-api-client",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jleagle/battlenet-api-client.git",
+                "reference": "bb5ffc159b47376a7563f0a7fbd6fb203a609fff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jleagle/battlenet-api-client/zipball/bb5ffc159b47376a7563f0a7fbd6fb203a609fff",
+                "reference": "bb5ffc159b47376a7563f0a7fbd6fb203a609fff",
+                "shasum": ""
+            },
+            "require": {
+                "jleagle/curl-wrapper": "~0.0",
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jleagle\\BattleNet\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Eagle",
+                    "email": "jimeagle@gmail.com",
+                    "homepage": "http://jimeagle.com"
+                }
+            ],
+            "description": "A package to retrieve information from the Battle.net API",
+            "keywords": [
+                "battle",
+                "battle.net",
+                "battlenet",
+                "blizzard",
+                "diablo",
+                "starcraft",
+                "warcraft",
+                "wow"
+            ],
+            "time": "2015-11-27 23:55:19"
+        },
+        {
+            "name": "jleagle/curl-wrapper",
+            "version": "0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jleagle/curl-wrapper.git",
+                "reference": "9507ab4ca5ff05a5354c6ecb43780177d48e491d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jleagle/curl-wrapper/zipball/9507ab4ca5ff05a5354c6ecb43780177d48e491d",
+                "reference": "9507ab4ca5ff05a5354c6ecb43780177d48e491d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "packaged/helpers": "~1.1",
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jleagle\\CurlWrapper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Eagle",
+                    "email": "jimeagle@gmail.com",
+                    "homepage": "http://jimeagle.com"
+                }
+            ],
+            "description": "An object oriented wrapper around cURL",
+            "keywords": [
+                "curl",
+                "wrapper"
+            ],
+            "time": "2015-11-28 02:49:10"
+        },
+        {
             "name": "laracasts/utilities",
             "version": "2.1",
             "source": {
@@ -1480,6 +1571,45 @@
                 "php"
             ],
             "time": "2016-02-28 19:48:28"
+        },
+        {
+            "name": "packaged/helpers",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/packaged/helpers.git",
+                "reference": "249c2026f3c2a4e402ae33a28f26ae7ed854b409"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/packaged/helpers/zipball/249c2026f3c2a4e402ae33a28f26ae7ed854b409",
+                "reference": "249c2026f3c2a4e402ae33a28f26ae7ed854b409",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Packaged\\Helpers\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brooke Bryan",
+                    "email": "brooke@bajb.net"
+                }
+            ],
+            "description": "Generic PHP Helper Classes",
+            "time": "2016-04-11 10:37:00"
         },
         {
             "name": "paragonie/random_compat",

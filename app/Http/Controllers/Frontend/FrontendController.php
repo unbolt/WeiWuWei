@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use Jleagle\BattleNet\Warcraft;
 
 /**
  * Class FrontendController
@@ -19,14 +20,14 @@ class FrontendController extends Controller
             'test' => 'it works!',
         ]);
 
-        return view('frontend.index');
-    }
+        $warcraft = new Warcraft(
+            env('BLIZZ_API_KEY'),
+            'EU',
+            'EN_GB'
+        );
 
-    /**
-     * @return \Illuminate\View\View
-     */
-    public function macros()
-    {
-        return view('frontend.macros');
+        $realms = $warcraft->getRealms();
+
+        return view('frontend.index');
     }
 }

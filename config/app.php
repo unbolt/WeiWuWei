@@ -24,7 +24,7 @@ return [
     |
     */
 
-    'name' => 'Laravel 5 Bootstrap',
+    'name' => 'Wei Wu Wei',
 
     /*
     |--------------------------------------------------------------------------
@@ -190,6 +190,7 @@ return [
         HieuLe\Active\ActiveServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
+
 
         /*
          * Has to override the Collective\Html\HtmlServiceProvider form singleton
