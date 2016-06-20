@@ -1,9 +1,10 @@
 var elixir = require('laravel-elixir');
 //require('./elixir-extensions');
+require('laravel-elixir-handlebars');
 
 elixir(function(mix) {
  mix
-     .phpUnit()
+     //.phpUnit()
      //.compressHtml()
 
     /**
@@ -28,7 +29,7 @@ elixir(function(mix) {
       */
      .sass([
         'frontend/app.scss',
-        'plugin/sweetalert/sweetalert.scss'
+        'plugin/**/*'
      ], 'resources/assets/css/frontend/app.css')
 
      /**
@@ -38,13 +39,21 @@ elixir(function(mix) {
         'frontend/app.css'
      ], 'public/css/frontend.css')
 
+
+    .templates([
+        'templates/**/*.hbs' // Will search in 'resources/views/templates'
+    ], 'resources/assets/js/frontend/compiled-templates.js', 'resources/views/', 'WEI')
+
+
      /**
       * Combine frontend scripts
       */
      .scripts([
-        'plugin/sweetalert/sweetalert.min.js',
+        'plugin/**/*',
         'plugins.js',
-        'frontend/app.js'
+        'frontend/compiled-templates.js',
+        'frontend/app.js',
+        'frontend/**/*'
      ], 'public/js/frontend.js')
 
      /**

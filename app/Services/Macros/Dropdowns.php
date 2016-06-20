@@ -2,12 +2,39 @@
 
 namespace App\Services\Macros;
 
+use Cache;
+use Jleagle\BattleNet\Warcraft;
+
 /**
  * Class Dropdowns
  * @package App\Services\Macros
  */
 trait Dropdowns
 {
+
+    public function selectServer($name, $selected = null, $options = array())
+    {
+        // Builds a list of WoW servers from the API
+        // Servers are cached for 24 hours (1440 minutes)
+        $servers = Cache::remember('users', '1440', function() {
+            $warcraft = new Warcraft(
+                env('BLIZZ_API_KEY'),
+                'EU',
+                'EN_GB'
+            );
+
+            return $warcraft->getRealms();
+        });
+
+        $list = array();
+        foreach($servers as $server) {
+            $list[$server->slug] = $server->name;
+        }
+
+        return $this->select($name, $list, $selected, $options);
+
+    }
+
     /**
      * Use this to set the default country state type for the shorthand method
      * @param  $name

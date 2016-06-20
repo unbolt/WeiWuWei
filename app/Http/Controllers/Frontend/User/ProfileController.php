@@ -39,19 +39,17 @@ class ProfileController extends Controller
      * -- Accepts a character name and a realm and searches for that character on the armoury
      *
      **/
-     public function characterSearch(Request $request)
+     public function characterSearch($server, $name)
      {
          $warcraft = new Warcraft(
              env('BLIZZ_API_KEY'),
-             'EU',
-             'EN_GB'
+             'eu',
+             'en_GB'
          );
 
-         $character = $warcraft->getCharacter('the-shatar', 'ritual');
+         $character = $warcraft->getCharacter($server, $name, ['audit']);
 
-        print_r($character);
-
-         return 'yes';
+         return response()->json($character);
      }
 
 

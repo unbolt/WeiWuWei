@@ -36,7 +36,26 @@
                         </div>
 
                         <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <hr />
+                                    <h3>Character Details</h3>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            {!! Form::input('character_name', 'character_name', null, ['class' => 'form-control', 'placeholder' => 'Character Name']) !!}
+                                        </div>
+                                        <div class="col-md-6">
+                                            {!! Form::selectServer('character_server', 'the-shatar', ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+
+                                    <div class="character_validation"></div>
+                                </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
+                                <hr />
+                                <p>Press save, or forever hold your peace / do it all again.</p>
                                 {!! Form::submit(trans('labels.general.buttons.save'), ['class' => 'btn btn-primary']) !!}
                             </div>
                         </div>
