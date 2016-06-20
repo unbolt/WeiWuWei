@@ -4,6 +4,12 @@
     "keywords": ["framework", "laravel", "boilerplate"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/unbolt/battlenet-api-client"
+	   }
+    ],
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
@@ -15,7 +21,7 @@
         "hieu-le/active": "~2.0",
         "arcanedev/log-viewer": "~3.0",
         "spatie/laravel-backup": "^3.0",
-        "jleagle/battlenet-api-client": "^0.1.0",
+        "jleagle/battlenet-api-client": "dev-master",
         "doctrine/dbal": "^2.5"
     },
     "require-dev": {
@@ -27,6 +33,7 @@
         "barryvdh/laravel-debugbar": "^2.1",
         "laracasts/generators": "^1.1"
     },
+
     "autoload": {
         "classmap": [
             "database"
