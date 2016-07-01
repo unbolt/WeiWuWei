@@ -29,6 +29,11 @@ class EventServiceProvider extends ServiceProvider
         \App\Events\Frontend\Auth\UserRegistered::class => [
             \App\Listeners\Frontend\Auth\UserRegisteredListener::class,
         ],
+
+        /**
+         * Achievement Related Events
+         */
+
     ];
 
     /**

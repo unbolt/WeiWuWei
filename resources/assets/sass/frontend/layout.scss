@@ -1,0 +1,38 @@
+section {
+    margin-bottom: 25px;
+}
+
+.header {
+    background-image: url('/images/illidan.png');
+    background-size: cover;
+
+    padding-bottom: 60px;
+
+    @include diagonal-background-bottom-left-internal(1600px, 30px, #fff);
+
+    .navbar {
+        border: 0px;
+
+        &.navbar-default {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.footer {
+    background-image: url('/images/illidan.png');
+    background-size: cover;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    color: #fff;
+
+    @include diagonal-background-top-left-internal(1600px, 30px, #fff);
+
+    i {
+        line-height: 134px;
+        text-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+    }
+
+}

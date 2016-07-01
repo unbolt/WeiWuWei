@@ -226,6 +226,7 @@ class EloquentUserRepository implements UserRepositoryContract
 
         $user->character_name = $input['character_name'];
         $user->character_server = $input['character_server'];
+        $user->character_role = $input['character_role'];
 
         if ($user->canChangeEmail()) {
             //Address is not current address

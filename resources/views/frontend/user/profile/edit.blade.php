@@ -44,12 +44,20 @@
                                             {!! Form::input('character_name', 'character_name', null, ['class' => 'form-control', 'placeholder' => 'Character Name']) !!}
                                         </div>
                                         <div class="col-md-6">
-                                            {!! Form::selectServer('character_server', 'the-shatar', ['class' => 'form-control']) !!}
+                                            {!! Form::selectServer('character_server', null, ['class' => 'form-control']) !!}
                                         </div>
                                     </div>
 
                                     <div class="character_validation"></div>
                                 </div>
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('role', 'Role', ['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-6">
+                                {!! Form::selectRole('character_role', null, ['class' => 'form-control']) !!}
+
+                            </div>
                         </div>
 
                         <div class="form-group">

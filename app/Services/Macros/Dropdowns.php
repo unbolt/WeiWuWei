@@ -12,6 +12,19 @@ use Jleagle\BattleNet\Warcraft;
 trait Dropdowns
 {
 
+    public function selectRole($name, $selected = null, $options = array())
+    {
+        $list = [
+            '' => 'Select Role',
+            'tank' => 'Tank',
+            'healer' => 'Healer',
+            'rdps' => 'Ranged DPS',
+            'mdps' => 'Melee DPS'
+        ];
+
+        return $this->select($name, $list, $selected, $options);
+    }
+
     public function selectServer($name, $selected = null, $options = array())
     {
         // Builds a list of WoW servers from the API
