@@ -1,5 +1,9 @@
 section {
     margin-bottom: 25px;
+
+    &.footer {
+        margin-bottom: 0px;
+    }
 }
 
 .header {
@@ -24,7 +28,6 @@ section {
     background-size: cover;
 
     padding-top: 30px;
-    padding-bottom: 30px;
 
     color: #fff;
 
