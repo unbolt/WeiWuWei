@@ -190,6 +190,8 @@ return [
         HieuLe\Active\ActiveServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
+        Riari\Forum\ForumServiceProvider::class,
+        Riari\Forum\Frontend\ForumFrontendServiceProvider::class,
 
 
         /*

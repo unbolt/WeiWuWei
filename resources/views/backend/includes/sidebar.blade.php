@@ -31,8 +31,8 @@
             @endauth
 
             @permission('create-news')
-                <li class="{{ Active::pattern('admin/News/*') }}">
-                    <a href="{!!url('admin/news/create')!!}"><span>News</span></a>
+                <li class="{{ Active::pattern('admin/news/*') }}">
+                    <a href="{!!url('admin/news')!!}"><span>News</span></a>
                 </li>
             @endauth
 

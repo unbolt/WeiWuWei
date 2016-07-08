@@ -27,7 +27,9 @@
 
         <div class="container">
             @include('includes.partials.messages')
+            @yield('pre-content')
             @yield('content')
+            @yield('post-content')
         </div><!-- container -->
 
         @include('frontend.includes.footer')
