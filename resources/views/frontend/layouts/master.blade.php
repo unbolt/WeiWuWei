@@ -8,34 +8,32 @@
 
         <title>@yield('title', app_name())</title>
 
-        <!-- Meta -->
         <meta name="description" content="@yield('meta_description', 'Default Description')">
         <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
         @yield('meta')
 
-        <!-- Styles -->
         @yield('before-styles-end')
         {!! Html::style(elixir('css/frontend.css')) !!}
         @yield('after-styles-end')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+        <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
     </head>
     <body id="app-layout">
 
         @include('frontend.includes.nav')
 
-        <div class="container">
-            @include('includes.partials.messages')
-            @yield('pre-content')
-            @yield('content')
-            @yield('post-content')
-        </div><!-- container -->
+        <section class="main-content">
+            <div class="container">
+                @include('includes.partials.messages')
+                @yield('pre-content')
+                @yield('content')
+                @yield('post-content')
+            </div>
+        </section>
 
         @include('frontend.includes.footer')
 
-        <!-- JavaScripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery/jquery-2.1.4.min.js')}}"><\/script>')</script>
         {!! Html::script('js/vendor/bootstrap/bootstrap.min.js') !!}
 

@@ -24,32 +24,32 @@ class CategoryPolicy extends \Riari\Forum\Policies\CategoryPolicy
 
     public function deleteThreads($user, Category $category)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
 
     public function enableThreads($user, Category $category)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
 
     public function moveThreadsFrom($user, Category $category)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
 
     public function moveThreadsTo($user, Category $category)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
 
     public function lockThreads($user, Category $category)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
 
     public function pinThreads($user, Category $category)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
 
     public function view($user, Category $category)
@@ -88,6 +88,6 @@ class CategoryPolicy extends \Riari\Forum\Policies\CategoryPolicy
 
     public function delete($user, Category $category)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
 }

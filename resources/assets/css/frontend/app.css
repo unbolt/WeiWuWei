@@ -7903,9 +7903,106 @@ button.close {
   overflow: visible;
   clip: auto; }
 
+.character-class-1 {
+  color: #835c33; }
+
+.character-class-2 {
+  color: #eb1774; }
+
+.character-class-3 {
+  color: #6c992f; }
+
+.character-class-4 {
+  color: #cfc100; }
+
+.character-class-5 {
+  color: #bfbfbf; }
+
+.character-class-6 {
+  color: #C41F3B; }
+
+.character-class-7 {
+  color: #0070DE; }
+
+.character-class-8 {
+  color: #1496c6; }
+
+.character-class-9 {
+  color: #523d8e; }
+
+.character-class-10 {
+  color: #00cc78; }
+
+.character-class-11 {
+  color: #FF7D0A; }
+
+.character-race, .character-race-1, .character-race-2, .character-race-3, .character-race-4, .character-race-5, .character-race-6, .character-race-7, .character-race-8, .character-race-9, .character-race-10, .character-race-11, .character-race-22, .character-race-25 {
+  position: absolute;
+  content: '';
+  top: -50%;
+  left: -50%;
+  width: 200px;
+  height: 200px;
+  background-color: gainsboro; }
+
+.character-race-1 {
+  -webkit-mask-image: url("/images/human.svg");
+  mask-image: url("/images/human.svg"); }
+
+.character-race-2 {
+  -webkit-mask-image: url("/images/orc.svg");
+  mask-image: url("/images/orc.svg"); }
+
+.character-race-3 {
+  -webkit-mask-image: url("/images/dwarf.svg");
+  mask-image: url("/images/dwarf.svg"); }
+
+.character-race-4 {
+  -webkit-mask-image: url("/images/nightelf.svg");
+  mask-image: url("/images/nightelf.svg"); }
+
+.character-race-5 {
+  -webkit-mask-image: url("/images/undead.svg");
+  mask-image: url("/images/undead.svg"); }
+
+.character-race-6 {
+  -webkit-mask-image: url("/images/tauren.svg");
+  mask-image: url("/images/tauren.svg"); }
+
+.character-race-7 {
+  -webkit-mask-image: url("/images/gnome.svg");
+  mask-image: url("/images/gnome.svg"); }
+
+.character-race-8 {
+  -webkit-mask-image: url("/images/troll.svg");
+  mask-image: url("/images/troll.svg"); }
+
+.character-race-9 {
+  -webkit-mask-image: url("/images/goblin.svg");
+  mask-image: url("/images/goblin.svg"); }
+
+.character-race-10 {
+  -webkit-mask-image: url("/images/bloodelf.svg");
+  mask-image: url("/images/bloodelf.svg"); }
+
+.character-race-11 {
+  -webkit-mask-image: url("/images/draenei.svg");
+  mask-image: url("/images/draenei.svg"); }
+
+.character-race-22 {
+  -webkit-mask-image: url("/images/worgen.svg");
+  mask-image: url("/images/worgen.svg"); }
+
+.character-race-25 {
+  -webkit-mask-image: url("/images/pandaren.svg");
+  mask-image: url("/images/pandaren.svg"); }
+
 /**
  * Frontend Styles Start Here
  */
+body {
+  background-color: #f5f5f5; }
+
 section {
   margin-bottom: 25px; }
   section.footer {
@@ -7920,7 +8017,7 @@ section {
     padding: 3.875% 0 0;
     margin-bottom: -1px;
     background-position: 50%;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="30"><polygon points="0,30 1600,0 1600,30" style="fill:rgb(255, 255, 255);stroke:rgb(255, 255, 255);stroke-width:0"></polygon></svg>');
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="30"><polygon points="0,30 1600,0 1600,30" style="fill:rgb(245, 245, 245);stroke:rgb(245, 245, 245);stroke-width:0"></polygon></svg>');
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -7933,6 +8030,12 @@ section {
     .header .navbar.navbar-default {
       text-transform: uppercase; }
 
+.main-content {
+  background-image: url("/images/alliance_right.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 250px; }
+
 .footer {
   background-image: url("/images/illidan.png");
   background-size: cover;
@@ -7942,14 +8045,15 @@ section {
   .footer::before {
     padding: 2.875% 0 0;
     background-position: 50%;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="30"><polygon points="30,0 1600,0 1600,30" style="fill:rgb(255, 255, 255);stroke:rgb(255, 255, 255);stroke-width:0"></polygon></svg>');
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="30"><polygon points="30,0 1600,0 1600,30" style="fill:rgb(245, 245, 245);stroke:rgb(245, 245, 245);stroke-width:0"></polygon></svg>');
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
     width: 100%;
     height: 0;
     top: 0;
-    content: ''; }
+    content: '';
+    margin-top: -1px; }
   .footer i {
     line-height: 134px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); }
@@ -7959,6 +8063,82 @@ textarea {
 
 .deleted {
   opacity: 0.65; }
+
+/*
+    POST BIT STYLES
+*/
+.post-bit .character {
+  overflow: hidden; }
+  .post-bit .character .character-details {
+    position: relative;
+    z-index: 999; }
+
+.character-profile {
+  text-align: center;
+  position: relative;
+  text-shadow: -1px -1px 0 #f5f5f5, 1px -1px 0 #f5f5f5, -1px 1px 0 #f5f5f5, 1px 1px 0 #f5f5f5; }
+  .character-profile .character-name {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: capitalize; }
+  .character-profile .character-server {
+    font-size: 0.8em;
+    text-transform: uppercase; }
+  .character-profile .character-avatar {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.pace-inactive {
+  display: none; }
+
+.pace .pace-progress {
+  background: #00e700;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px; }
+
+.pace .pace-progress-inner {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #00e700, 0 0 5px #00e700;
+  opacity: 1.0;
+  transform: rotate(3deg) translate(0px, -4px); }
+
+.pace .pace-activity {
+  display: block;
+  position: fixed;
+  z-index: 2000;
+  top: 15px;
+  right: 15px;
+  width: 14px;
+  height: 14px;
+  border: solid 2px transparent;
+  border-top-color: #00e700;
+  border-left-color: #00e700;
+  border-radius: 10px;
+  animation: pace-spinner 400ms linear infinite; }
+
+@keyframes pace-spinner {
+  0% {
+    transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
 body.stop-scrolling {
   height: 100%;
@@ -8673,57 +8853,5 @@ body.stop-scrolling {
   100% {
     opacity: 0;
     transform: translateY(145%); } }
-
-.pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
-
-.pace-inactive {
-  display: none; }
-
-.pace .pace-progress {
-  background: #00e700;
-  position: fixed;
-  z-index: 2000;
-  top: 0;
-  right: 100%;
-  width: 100%;
-  height: 2px; }
-
-.pace .pace-progress-inner {
-  display: block;
-  position: absolute;
-  right: 0px;
-  width: 100px;
-  height: 100%;
-  box-shadow: 0 0 10px #00e700, 0 0 5px #00e700;
-  opacity: 1.0;
-  transform: rotate(3deg) translate(0px, -4px); }
-
-.pace .pace-activity {
-  display: block;
-  position: fixed;
-  z-index: 2000;
-  top: 15px;
-  right: 15px;
-  width: 14px;
-  height: 14px;
-  border: solid 2px transparent;
-  border-top-color: #00e700;
-  border-left-color: #00e700;
-  border-radius: 10px;
-  animation: pace-spinner 400ms linear infinite; }
-
-@keyframes pace-spinner {
-  0% {
-    transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg);
-    transform: rotate(360deg); } }
 
 /*# sourceMappingURL=app.css.map */

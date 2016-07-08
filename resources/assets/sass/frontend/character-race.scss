@@ -1,0 +1,87 @@
+.character-race {
+    position: absolute;
+    content: '';
+    top: -50%;
+    left: -50%;
+    width: 200px;
+    height: 200px;
+    background-color: darken($global-background, 10%);
+}
+
+.character-race-1 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/human.svg');
+    mask-image: url('/images/human.svg');
+}
+
+.character-race-2 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/orc.svg');
+    mask-image: url('/images/orc.svg');
+}
+
+.character-race-3 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/dwarf.svg');
+    mask-image: url('/images/dwarf.svg');
+}
+
+.character-race-4 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/nightelf.svg');
+    mask-image: url('/images/nightelf.svg');
+}
+
+.character-race-5 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/undead.svg');
+    mask-image: url('/images/undead.svg');
+}
+
+.character-race-6 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/tauren.svg');
+    mask-image: url('/images/tauren.svg');
+}
+
+.character-race-7 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/gnome.svg');
+    mask-image: url('/images/gnome.svg');
+}
+
+.character-race-8 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/troll.svg');
+    mask-image: url('/images/troll.svg');
+}
+
+.character-race-9 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/goblin.svg');
+    mask-image: url('/images/goblin.svg');
+}
+
+.character-race-10 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/bloodelf.svg');
+    mask-image: url('/images/bloodelf.svg');
+}
+
+.character-race-11 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/draenei.svg');
+    mask-image: url('/images/draenei.svg');
+}
+
+.character-race-22 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/worgen.svg');
+    mask-image: url('/images/worgen.svg');
+}
+
+.character-race-25 {
+    @extend .character-race;
+    -webkit-mask-image: url('/images/pandaren.svg');
+    mask-image: url('/images/pandaren.svg');
+}

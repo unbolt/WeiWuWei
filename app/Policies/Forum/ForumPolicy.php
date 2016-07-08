@@ -10,7 +10,7 @@ class ForumPolicy extends \Riari\Forum\Policies\ForumPolicy
      */
     public function createCategories($user)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
     /**
      * Permission: Move categories.
@@ -20,7 +20,7 @@ class ForumPolicy extends \Riari\Forum\Policies\ForumPolicy
      */
     public function moveCategories($user)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
     /**
      * Permission: Rename categories.
@@ -30,6 +30,6 @@ class ForumPolicy extends \Riari\Forum\Policies\ForumPolicy
      */
     public function renameCategories($user)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
 }

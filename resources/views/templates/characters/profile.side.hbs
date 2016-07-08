@@ -1,0 +1,17 @@
+<div class="character_profile_side">
+    <div class="character-race-{{ race }} hidden-sm hidden-xs"></div>
+    <div class="character-details">
+        <div class="character-name character-class-{{ characterClass }}">
+            {{ name }}
+        </div>
+        <div class="character-server hidden-sm hidden-xs">
+            {{ realm }}
+        </div>
+        <div class="character-avatar hidden-sm hidden-xs">
+            <img src="{{ thumbnail }}" class="img-circle" />
+        </div>
+        <div class="character-achievements hidden-sm hidden-xs">
+            <i class="fa fa-shield" aria-hidden="true"></i> <span>{{formatNumber achievementPoints}}</span>
+        </div>
+    </div>
+</div>

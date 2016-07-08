@@ -5,3 +5,44 @@ textarea {
 .deleted {
     opacity: 0.65;
 }
+
+/*
+    POST BIT STYLES
+*/
+
+.post-bit {
+    .character {
+        overflow: hidden;
+        .character-details {
+            position: relative;
+            z-index:999;
+        }
+    }
+}
+
+.character-profile {
+    text-align: center;
+    position: relative;
+
+    text-shadow:
+       -1px -1px 0 $global-background,
+        1px -1px 0 $global-background,
+        -1px 1px 0 $global-background,
+         1px 1px 0 $global-background;
+
+    .character-name {
+        font-weight: bold;
+        font-size: 1.2em;
+        text-transform: capitalize;
+    }
+
+    .character-server {
+        font-size: 0.8em;
+        text-transform: uppercase;
+    }
+
+    .character-avatar {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}

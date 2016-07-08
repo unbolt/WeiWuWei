@@ -1,12 +1,27 @@
-<tr id="post-{{ $post->sequenceNumber }}" class="{{ $post->trashed() ? 'deleted' : '' }}">
-    <td>
-        <strong>{!! $post->authorName !!}</strong>
+<tr id="post-{{ $post->sequenceNumber }}" class="post-bit {{ $post->trashed() ? 'deleted' : '' }}">
+    <td class="character">
+        <div class="character-profile" @if($post->author->character_name && $post->author->character_server) data-character-name="{!! $post->author->character_name !!}" data-character-server="{!! $post->author->character_server !!}" @endif>
+            <div class="character-name">
+                @if ($post->author->character_name)
+                    <div class="character-class">{!! $post->author->character_name !!}</div>
+                @else
+                    {!! $post->author->name !!}
+                @endif
+            </div>
+
+        </div>
+
     </td>
-    <td>
+    <td class="post-content">
         @if (!is_null($post->parent))
             <p>
                 <strong>
-                    {{ trans('forum::general.response_to', ['item' => $post->parent->authorName]) }}
+                    In response to
+                    @if ($post->author->character_name)
+                        {!! $post->author->character_name !!}
+                    @else
+                        {!! $post->author->name !!}
+                    @endif
                     (<a href="{{ Forum::route('post.show', $post->parent) }}">{{ trans('forum::posts.view') }}</a>):
                 </strong>
             </p>
@@ -31,10 +46,15 @@
         @endif
     </td>
     <td class="text-muted">
-        {{ trans('forum::general.posted') }} {{ $post->posted }}
+        <abbr title="Posted by {{ $post->author->name }}">{{ trans('forum::general.posted') }} {{ $post->posted }}</abbr>
         @if ($post->hasBeenUpdated())
             | {{ trans('forum::general.last_updated') }} {{ $post->updated }}
         @endif
+
+        @if ($post->legacy_post)
+            &nbsp; &nbsp;<abbr title="This post was imported from our old forums. It might look weird."><i class="fa fa-bug" aria-hidden="true"></i> Legacy</abbr>
+        @endif
+
         <span class="pull-right">
             <a href="{{ Forum::route('thread.show', $post) }}">#{{ $post->sequenceNumber }}</a>
             @if (!$post->trashed())

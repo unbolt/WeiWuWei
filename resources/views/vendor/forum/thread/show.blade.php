@@ -95,7 +95,7 @@
     </div>
 @stop
 
-@section ('footer')
+@section ('after-scripts-end')
     <script>
     $('tr input[type=checkbox]').change(function () {
         var postRow = $(this).closest('tr').prev('tr');

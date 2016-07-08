@@ -1,3 +1,7 @@
+body {
+    background-color: $global-background;
+}
+
 section {
     margin-bottom: 25px;
 
@@ -12,7 +16,7 @@ section {
 
     padding-bottom: 60px;
 
-    @include diagonal-background-bottom-left-internal(1600px, 30px, #fff);
+    @include diagonal-background-bottom-left-internal(1600px, 30px, $global-background);
 
     .navbar {
         border: 0px;
@@ -23,6 +27,13 @@ section {
     }
 }
 
+.main-content {
+    background-image: url('/images/alliance_right.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 250px;
+}
+
 .footer {
     background-image: url('/images/illidan.png');
     background-size: cover;
@@ -31,7 +42,7 @@ section {
 
     color: #fff;
 
-    @include diagonal-background-top-left-internal(1600px, 30px, #fff);
+    @include diagonal-background-top-left-internal(1600px, 30px, $global-background);
 
     i {
         line-height: 134px;

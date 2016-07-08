@@ -12,7 +12,7 @@ class ThreadPolicy extends \Riari\Forum\Policies\ThreadPolicy
      */
     public function deletePosts($user, Thread $thread)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
     /**
      * Permission: Rename thread.
@@ -23,7 +23,7 @@ class ThreadPolicy extends \Riari\Forum\Policies\ThreadPolicy
      */
     public function rename($user, Thread $thread)
     {
-        return $user->hasRole('admin');
+        return $user->hasRole('Administrator');
     }
     /**
      * Permission: Reply to thread.
