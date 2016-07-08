@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'soft_deletes' => true,
+    'soft_deletes' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -80,6 +80,6 @@ return [
     |
     */
 
-    'display_trashed_posts' => true
+    'display_trashed_posts' => false
 
 ];

@@ -17,7 +17,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li>{!! link_to_route('frontend.index', 'Home') !!}</li>
-                    <li>{!! link_to('forum', 'Forums') !!}</li>
+                    <li>{!! link_to('forums', 'Forums') !!}</li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

@@ -33,7 +33,7 @@
         @if ($post->trashed())
             <span class="label label-danger">{{ trans('forum::general.deleted') }}</span>
         @else
-            {!! Forum::render($post->content) !!}
+            {% Forum::render($post->content) %}
         @endif
     </td>
 </tr>
