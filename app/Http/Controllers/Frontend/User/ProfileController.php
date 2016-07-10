@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\User\UpdateProfileRequest;
 use App\Repositories\Frontend\Access\User\UserRepositoryContract;
 use Jleagle\BattleNet\Warcraft;
+use App;
 
 /**
  * Class ProfileController
@@ -47,9 +48,16 @@ class ProfileController extends Controller
              'en_GB'
          );
 
-         $character = $warcraft->getCharacter($server, $name, ['audit']);
+         if($warcraft) {
+             $character = $warcraft->getCharacter($server, $name, ['audit']);
 
-         return response()->json($character);
+             print_r($character);
+             die();
+
+             return response()->json($character);
+         }
+
+
      }
 
 
