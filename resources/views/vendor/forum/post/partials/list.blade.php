@@ -35,6 +35,13 @@
         @else
             {% Forum::render($post->content) %}
         @endif
+
+        @if ($post->author->signature)
+            <hr>
+            <div class="text-muted">
+                {% Forum::render($post->author->signature) %}
+            </div>
+        @endif
     </td>
 </tr>
 <tr>

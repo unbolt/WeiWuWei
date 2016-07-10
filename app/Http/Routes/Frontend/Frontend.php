@@ -16,8 +16,9 @@ Route::group(['middleware' => 'auth'], function () {
         // Profile edit routes
             Route::get('profile/edit', 'ProfileController@edit')->name('frontend.user.profile.edit');
             Route::patch('profile/update', 'ProfileController@update')->name('frontend.user.profile.update');
-            // Character search route
-            Route::get('character/{server}/{name}', 'ProfileController@characterSearch')->name('fontend.user.profile.character.search');
 
     });
 });
+
+// Character search route
+Route::get('character/{server}/{name}', 'ProfileController@characterSearch')->name('fontend.user.profile.character.search');
