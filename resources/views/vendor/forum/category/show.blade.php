@@ -78,7 +78,7 @@
                     @if (!$category->threadsPaginated->isEmpty())
                         @foreach ($category->threadsPaginated as $thread)
                             <tr class="{{ $thread->trashed() ? "deleted" : "" }}">
-                                <td>
+                                <td class="thread-title">
                                     <span class="pull-right">
                                         @if ($thread->locked)
                                             <span class="label label-warning">{{ trans('forum::threads.locked') }}</span>
@@ -96,18 +96,36 @@
                                     <p class="lead">
                                         <a href="{{ Forum::route('thread.show', $thread) }}">{{ $thread->title }}</a>
                                     </p>
-                                    <p>{{ $thread->authorName }} <span class="text-muted">({{ $thread->posted }})</span></p>
+                                    <div class="character-name" @if($thread->author->character_name && $thread->author->character_server) data-character-name="{!! $thread->author->character_name !!}" data-character-server="{!! $thread->author->character_server !!}" @endif>
+                                        <div class="character-name">
+                                            @if ($thread->author->character_name)
+                                                <div class="character-class">{!! $thread->author->character_name !!}</div>
+                                            @else
+                                                {!! $thread->author->name !!}
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <p><span class="text-muted hidden-sm hidden-xs">({{ $thread->posted }})</span></p>
                                 </td>
                                 @if ($thread->trashed())
                                     <td colspan="2">&nbsp;</td>
                                 @else
                                     <td class="text-right">
-                                        {{ $thread->replyCount }}
+                                        {{ $thread->reply_count }}
                                     </td>
                                     <td class="text-right">
-                                        {{ $thread->lastPost->authorName }}
-                                        <p class="text-muted">({{ $thread->lastPost->posted }})</p>
-                                        <a href="{{ Forum::route('thread.show', $thread->lastPost) }}" class="btn btn-primary btn-xs">{{ trans('forum::posts.view') }} &raquo;</a>
+                                        <a href="{{ Forum::route('thread.show', $thread->lastPost) }}">
+                                            <div class="character-name" @if($thread->lastPost->author->character_name && $thread->lastPost->author->character_server) data-character-name="{!! $thread->lastPost->author->character_name !!}" data-character-server="{!! $thread->lastPost->author->character_server !!}" @endif>
+                                                <div class="character-name">
+                                                    @if ($thread->lastPost->author->character_name)
+                                                        <div class="character-class">{!! $thread->lastPost->author->character_name !!}</div>
+                                                    @else
+                                                        {!! $thread->lastPost->author->name !!}
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="text-muted">({{ $thread->lastPost->posted }})</div>
+                                        </a>
                                     </td>
                                 @endif
                                 @can ('manageThreads', $category)

@@ -36,10 +36,18 @@
                             </p>
                         </td>
                         <td>
-                            {{ $thread->replyCount }}
+                            {{ $thread->reply_count }}
                         </td>
                         <td class="text-right">
-                            {{ $thread->lastPost->authorName }}
+                            <div class="character-name" @if($thread->lastPost->author->character_name && $thread->lastPost->author->character_server) data-character-name="{!! $thread->lastPost->author->character_name !!}" data-character-server="{!! $thread->lastPost->author->character_server !!}" @endif>
+                                <div class="character-name">
+                                    @if ($thread->lastPost->author->character_name)
+                                        <div class="character-class">{!! $thread->lastPost->author->character_name !!}</div>
+                                    @else
+                                        {!! $thread->lastPost->author->name !!}
+                                    @endif
+                                </div>
+                            </div>
                             <p class="text-muted">({{ $thread->lastPost->posted }})</p>
                             <a href="{{ Forum::route('thread.show', $thread->lastPost) }}" class="btn btn-primary btn-xs">{{ trans('forum::posts.view') }} &raquo;</a>
                         </td>

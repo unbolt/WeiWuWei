@@ -2,6 +2,15 @@ this["WEI"] = this["WEI"] || {};
 this["WEI"]["templates"] = this["WEI"]["templates"] || {};
 this["WEI"]["templates"]["characters"] = this["WEI"]["templates"]["characters"] || {};
 this["WEI"]["templates"]["characters"]["profile"] = this["WEI"]["templates"]["characters"]["profile"] || {};
+this["WEI"]["templates"]["characters"]["profile"]["name"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "<div class=\"character-name character-class-"
+    + alias4(((helper = (helper = helpers.characterClass || (depth0 != null ? depth0.characterClass : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"characterClass","hash":{},"data":data}) : helper)))
+    + "\">\n    "
+    + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
+    + "\n</div>\n";
+},"useData":true});
 this["WEI"]["templates"]["characters"]["profile"]["side"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 

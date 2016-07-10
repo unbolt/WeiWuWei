@@ -20,7 +20,7 @@ class Kernel extends ConsoleKernel
         Commands\ImportUsers::class,
         Commands\ImportCategories::class,
         Commands\ImportPosts::class,
-
+        Commands\UpdatePostCounts::class,
     ];
 
     /**

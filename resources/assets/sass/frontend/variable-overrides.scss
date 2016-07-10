@@ -1,6 +1,10 @@
 $fa-font-path: "../fonts/font-awesome";
 $font-family-sans-serif:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+// Colours
+$brand-primary : $global-accent;
+$text-muted    : darken($global-background, 25%);
+
 // Navigation overrides
 $navbar-default-link-color: #fff;
 $navbar-border-radius: 0px;
