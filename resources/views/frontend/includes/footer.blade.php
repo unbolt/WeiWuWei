@@ -1,4 +1,4 @@
-<section class="footer">
+<section class="footer hidden-sm hidden-xs">
     <div class="container">
         <div class="col-md-4 col-md-offset-2">
             <img src="/images/weiwu_notext.png" />

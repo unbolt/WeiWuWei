@@ -67,7 +67,7 @@
                 <thead>
                     <tr>
                         <th>{{ trans('forum::general.subject') }}</th>
-                        <th class="col-md-2 text-right">{{ trans('forum::general.replies') }}</th>
+                        <th class="col-md-2 text-right hidden-sm hidden-xs">{{ trans('forum::general.replies') }}</th>
                         <th class="col-md-2 text-right">{{ trans('forum::posts.last') }}</th>
                         @can ('manageThreads', $category)
                             <th class="col-md-1 text-right"><input type="checkbox" data-toggle-all></th>
@@ -96,34 +96,18 @@
                                     <p class="lead">
                                         <a href="{{ Forum::route('thread.show', $thread) }}">{{ $thread->title }}</a>
                                     </p>
-                                    <div class="character-name" @if($thread->author->character_name && $thread->author->character_server) data-character-name="{!! $thread->author->character_name !!}" data-character-server="{!! $thread->author->character_server !!}" @endif>
-                                        <div class="character-name">
-                                            @if ($thread->author->character_name)
-                                                <div class="character-class">{!! $thread->author->character_name !!}</div>
-                                            @else
-                                                {!! $thread->author->name !!}
-                                            @endif
-                                        </div>
-                                    </div>
+                                    @include ('frontend.user.partials.username', array('author' => $thread->author))
                                     <p><span class="text-muted hidden-sm hidden-xs">({{ $thread->posted }})</span></p>
                                 </td>
                                 @if ($thread->trashed())
                                     <td colspan="2">&nbsp;</td>
                                 @else
-                                    <td class="text-right">
+                                    <td class="text-right hidden-sm hidden-xs">
                                         {{ $thread->reply_count }}
                                     </td>
                                     <td class="text-right">
                                         <a href="{{ Forum::route('thread.show', $thread->lastPost) }}">
-                                            <div class="character-name" @if($thread->lastPost->author->character_name && $thread->lastPost->author->character_server) data-character-name="{!! $thread->lastPost->author->character_name !!}" data-character-server="{!! $thread->lastPost->author->character_server !!}" @endif>
-                                                <div class="character-name">
-                                                    @if ($thread->lastPost->author->character_name)
-                                                        <div class="character-class">{!! $thread->lastPost->author->character_name !!}</div>
-                                                    @else
-                                                        {!! $thread->lastPost->author->name !!}
-                                                    @endif
-                                                </div>
-                                            </div>
+                                            @include ('frontend.user.partials.username', array('author' => $thread->lastPost->author))
                                             <div class="text-muted">({{ $thread->lastPost->posted }})</div>
                                         </a>
                                     </td>

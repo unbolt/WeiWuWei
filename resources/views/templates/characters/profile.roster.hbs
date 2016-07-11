@@ -1,0 +1,27 @@
+
+<div class="character-profile-roster character-class-{{ characterClass }}">
+    <div class="character-race-{{ race }} hidden-sm hidden-xs"></div>
+
+    <div class="character-avatar pull-left">
+        <img src="{{ thumbnail }}" class="img-circle" />
+    </div>
+
+    <div class="character-name character-class-{{ characterClass }}">
+        {{ name }}
+    </div>
+    <div class="character-server hidden-sm hidden-xs">
+        {{ realm }}
+    </div>
+    <div class="character-social">
+            <a href="http://eu.battle.net/wow/en/character/{{ serverslug }}/{{ name }}/simple" target="_blank"><i class="fa fa-user" aria-hidden="true"></i></a>
+        {{#if twitch}}
+            <a href="http://twitch.tv/{{ twitch }}" target="_blank"><i class="fa fa-twitch" aria-hidden="true"></i></a>
+        {{/if}}
+        {{#if twitter}}
+            <a href="http://twitter.com/{{ twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        {{/if}}
+        {{#if youtube}}
+            <a href="http://youtube.com/{{ youtube }}" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+        {{/if}}
+    </div>
+</div>

@@ -36,6 +36,29 @@
                         </div>
 
                         <div class="form-group">
+                            {!! Form::label('twitter', 'Twitter', ['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-6">
+                                {!! Form::input('twitter', 'twitter', null, ['class' => 'form-control', 'placeholder' => 'Twitter']) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('twitch', 'Twitch', ['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-6">
+                                {!! Form::input('twitch', 'twitch', null, ['class' => 'form-control', 'placeholder' => 'Twitch']) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('youtube', 'YouTube', ['class' => 'col-md-4 control-label']) !!}
+                            <div class="col-md-6">
+                                {!! Form::input('youtube', 'youtube', null, ['class' => 'form-control', 'placeholder' => 'YouTube']) !!}
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <hr />
                                     <h3>Character Details</h3>

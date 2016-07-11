@@ -36,6 +36,31 @@
                     </div>
                 </div><!--form control-->
 
+                <div class="form-group">
+                    {!! Form::label('role', 'Role', ['class' => 'col-lg-2 control-label']) !!}
+                    <div class="col-lg-10">
+                        {!! Form::selectRole('character_role', null, ['class' => 'form-control']) !!}
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                            <hr />
+                            <h3>Character Details</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {!! Form::input('character_name', 'character_name', null, ['class' => 'form-control', 'placeholder' => 'Character Name']) !!}
+                                </div>
+                                <div class="col-md-6">
+                                    {!! Form::selectServer('character_server', null, ['class' => 'form-control']) !!}
+                                </div>
+                            </div>
+
+                            <div class="character_validation"></div>
+                        </div>
+                </div>
+
                 @if ($user->id != 1)
                     <div class="form-group">
                         <label class="col-lg-2 control-label">{{ trans('validation.attributes.backend.access.users.active') }}</label>

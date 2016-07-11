@@ -8,7 +8,7 @@
             <thead>
                 <tr>
                     <th>{{ trans('forum::general.subject') }}</th>
-                    <th class="col-md-2">{{ trans('forum::general.replies') }}</th>
+                    <th class="col-md-2 hidden-sm hidden-xs">{{ trans('forum::general.replies') }}</th>
                     <th class="col-md-2 text-right">{{ trans('forum::posts.last') }}</th>
                 </tr>
             </thead>
@@ -35,19 +35,11 @@
                                 <span class="text-muted">(<em><a href="{{ Forum::route('category.show', $thread->category) }}">{{ $thread->category->title }}</a></em>, {{ $thread->posted }})</span>
                             </p>
                         </td>
-                        <td>
+                        <td class="hidden-sm hidden-xs">
                             {{ $thread->reply_count }}
                         </td>
                         <td class="text-right">
-                            <div class="character-name" @if($thread->lastPost->author->character_name && $thread->lastPost->author->character_server) data-character-name="{!! $thread->lastPost->author->character_name !!}" data-character-server="{!! $thread->lastPost->author->character_server !!}" @endif>
-                                <div class="character-name">
-                                    @if ($thread->lastPost->author->character_name)
-                                        <div class="character-class">{!! $thread->lastPost->author->character_name !!}</div>
-                                    @else
-                                        {!! $thread->lastPost->author->name !!}
-                                    @endif
-                                </div>
-                            </div>
+                            @include ('frontend.user.partials.username', array('author' => $thread->lastPost->author))
                             <p class="text-muted">({{ $thread->lastPost->posted }})</p>
                             <a href="{{ Forum::route('thread.show', $thread->lastPost) }}" class="btn btn-primary btn-xs">{{ trans('forum::posts.view') }} &raquo;</a>
                         </td>

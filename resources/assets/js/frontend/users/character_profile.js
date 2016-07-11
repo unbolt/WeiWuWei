@@ -19,7 +19,21 @@ $(function(){
             var cacheName = 'char-'+characterName+'-'+characterServer;
 
             if(data = $.jStorage.get(cacheName)) {
-                var template = WEI.templates.characters.profile.side(data);
+
+                console.log(data);
+
+                if ($(this).hasClass('character-profile-small')) {
+                    // Add the profile fields to the data array so handlebars processes it properly
+                    data.twitch = $(this).attr('data-character-twitch');
+                    data.twitter = $(this).attr('data-character-twitter');
+                    data.youtube = $(this).attr('data-character-youtube');
+                    data.serverslug = $(this).attr('data-character-server');
+
+                    var template = WEI.templates.characters.profile.roster(data);
+                } else {
+                    var template = WEI.templates.characters.profile.side(data);
+                }
+
                 $(this).html(template);
             } else {
                 // No cache found
@@ -32,7 +46,18 @@ $(function(){
                     if(data.name) {
                         // There's a char name so we presume everything else is fine
                         // Load the character template and replace the profile block with it
-                        var template = WEI.templates.characters.profile.side(data);
+                        if((updateElement).hasClass('character-profile-small')) {
+                            // Add the profile fields to the data array so handlebars processes it properly
+                            data.twitch = $(this).attr('data-character-twitch');
+                            data.twitter = $(this).attr('data-character-twitter');
+                            data.youtube = $(this).attr('data-character-youtube');
+                            data.serverslug = $(this).attr('data-character-server');
+
+                            var template = WEI.templates.characters.profile.roster(data);
+                        } else {
+                            var template = WEI.templates.characters.profile.side(data);
+                        }
+
                         updateElement.html(template);
                         // Write the data to the cache
                         $.jStorage.set(cacheName, data, {TTL: cacheTTL});

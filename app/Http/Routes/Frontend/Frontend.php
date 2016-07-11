@@ -4,7 +4,7 @@
  * Frontend Controllers
  */
 Route::get('/', 'FrontendController@index')->name('frontend.index');
-// Route::get('macros', 'FrontendController@macros')->name('frontend.macros');
+Route::get('/roster', 'FrontendController@roster')->name('frontend.roster');
 
 /**
  * These frontend controllers require the user to be logged in

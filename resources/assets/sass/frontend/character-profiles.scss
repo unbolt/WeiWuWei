@@ -1,0 +1,21 @@
+.character-profile-roster {
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    .character-avatar {
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .character-server {
+        color: darken($global-background, 25%);
+    }
+
+    .character-social {
+        margin-top: 10px;
+        font-size: 1.4em;
+    }
+}

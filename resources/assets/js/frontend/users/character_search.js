@@ -15,8 +15,6 @@
      // Do the ajax call
     $.get( "/character/"+character_server+"/"+character_name, function( data ) {
 
-        console.log(data);
-
         var template = WEI.templates.characters.profile.small(data);
 
         $('.character_validation').html(template).fadeIn();

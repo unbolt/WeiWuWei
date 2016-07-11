@@ -1,49 +1,77 @@
+.character-class {
+    &.character-profile-roster {
+        border: 1px solid black;
+    }
+}
+
 .character-class-1 {
+    @extend .character-class;
+    border-color: darken($class-warrior, 25%) !important;
     color: darken($class-warrior, 25%);
 }
 
 .character-class-2 {
+    @extend .character-class;
+    border-color: darken($class-paladin, 25%) !important;
     color: darken($class-paladin, 25%);
 }
 
 .character-class-3 {
-
+    @extend .character-class;
+    border-color: darken($class-hunter, 25%) !important;
     color: darken($class-hunter, 25%);
 }
 
 .character-class-4 {
+    @extend .character-class;
+    border-color: darken($class-rogue, 30%) !important;
     color: darken($class-rogue, 30%);
-    //text-shadow: 1px 1px rgba(0,0,0,0.2);
 }
 
 .character-class-5 {
+    @extend .character-class;
+    border-color: darken($class-priest, 25%) !important;
     color: darken($class-priest, 25%);
 }
 
 .character-class-6 {
+    @extend .character-class;
+    border-color: $class-dk !important;
     color: $class-dk;
 }
 
 .character-class-7 {
+    @extend .character-class;
+    border-color: $class-shaman !important;
     color: $class-shaman;
 }
 
 .character-class-8 {
+    @extend .character-class;
+    border-color: darken($class-mage, 25%) !important;
     color: darken($class-mage, 25%);
 }
 
 .character-class-9 {
+    @extend .character-class;
+    border-color: darken($class-warlock, 25%) !important;
     color: darken($class-warlock, 25%);
 }
 
 .character-class-10 {
+    @extend .character-class;
+    border-color: darken($class-monk, 10%) !important;
     color: darken($class-monk, 10%);
 }
 
 .character-class-11 {
+    @extend .character-class;
+    border-color: $class-druid !important;
     color: $class-druid;
 }
 
 .character-class-12 {
-
+    @extend .character-class;
+    border-color: $class-dh !important;
+    color: $class-dh;
 }
