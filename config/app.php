@@ -193,6 +193,7 @@ return [
         Riari\Forum\ForumServiceProvider::class,
         Riari\Forum\Frontend\ForumFrontendServiceProvider::class,
         Haleks\Markdown\MarkdownServiceProvider::class,
+        Slynova\Commentable\ServiceProvider::class,
 
         /*
          * Has to override the Collective\Html\HtmlServiceProvider form singleton

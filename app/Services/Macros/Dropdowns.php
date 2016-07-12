@@ -25,6 +25,17 @@ trait Dropdowns
         return $this->select($name, $list, $selected, $options);
     }
 
+    public function selectLocation($name, $selected = null, $options = array())
+    {
+        $list = [
+            '' => 'Select Location',
+            'The Nighthold' => 'The Nighthold',
+            'Emerald Nightmare' => 'Emerald Nightmare'
+        ];
+
+        return $this->select($name, $list, $selected, $options);
+    }
+
     public function selectServer($name, $selected = null, $options = array())
     {
         // Builds a list of WoW servers from the API

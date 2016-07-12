@@ -35,4 +35,19 @@ class User extends Authenticatable
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    protected $appends = ['inviteMacro'];
+
+    public function getInviteMacroAttribute()
+    {
+        if($this->character_server == 'the-shatar') {
+            $server_formatted = 'theSha\'tar';
+        } else if($this->character_server == 'steamwheedle-cartel') {
+            $server_formatted = 'SteamwheedleCartel';
+        } else if($this->character_server == 'moonglade') {
+            $server_formatted = 'Moonglade';
+        }
+
+        return '/invite '.$this->character_name.'-'.$server_formatted;
+    }
 }

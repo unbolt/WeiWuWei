@@ -1,0 +1,27 @@
+.title-tank {
+    &::before {
+        content: 'Tanks';
+        font-weight: bold;
+    }
+}
+
+.title-healer {
+    &::before {
+        content: 'Healers';
+        font-weight: bold;
+    }
+}
+
+.title-mdps {
+    &::before {
+        content: 'Melee DPS';
+        font-weight: bold;
+    }
+}
+
+.title-rdps {
+    &::before {
+        content: 'Ranged DPS';
+        font-weight: bold;
+    }
+}
