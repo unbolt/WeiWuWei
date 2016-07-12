@@ -117,6 +117,7 @@ class ImportPosts extends Command
                 $post_content = $post->post_text;
                 $post_content = preg_replace('#\:\w+#', '', $post_content);
                 $post_content = $this->convertBBCodeToHTML($post_content);
+                $post_content = strip_tags($post_content);
                 $post_content = str_replace("&quot;","\"", $post_content);
                 $post_content = preg_replace('|[[\/\!]*?[^\[\]]*?]|si', '', $post_content);
                 $post_content = $this->trimSmilies($post_content);
