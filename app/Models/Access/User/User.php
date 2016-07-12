@@ -48,6 +48,12 @@ class User extends Authenticatable
             $server_formatted = 'Moonglade';
         }
 
-        return '/invite '.$this->character_name.'-'.$server_formatted;
+        if(isset($server_formatted)) {
+            return '/invite '.$this->character_name.'-'.$server_formatted;
+        } else {
+            return false;
+        }
+
+
     }
 }
