@@ -19,7 +19,7 @@
                     <li>{!! link_to_route('frontend.index', 'Home') !!}</li>
                     <li>{!! link_to_route('frontend.roster', 'Roster') !!}</li>
                     <li>{!! link_to('forums', 'Forums') !!}</li>
-                    @needsrole([Raider'])
+                    @roles('Raider')
                         <li>{!! link_to('raids', 'Raids') !!}</li>
                     @endauth
                 </ul>
