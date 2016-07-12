@@ -25,3 +25,23 @@
         font-weight: bold;
     }
 }
+
+.pending-response {
+    >.character-name {
+        display: inline-block;
+
+        .character-name {
+            display: inline-block;
+        }
+
+        &:after {
+            content: ',';
+        }
+
+        &:last-of-type {
+            &:after {
+                content: '';
+            }
+        }
+    }
+}

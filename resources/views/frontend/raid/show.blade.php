@@ -35,9 +35,11 @@
 
             <h4 class="text-muted">Pending Response</h4>
 
-            @foreach ($raid->usersNotResponded as $user)
-                @include('frontend.user.partials.username', ['author' => $user])
-            @endforeach
+            <div class="pending-response">
+                @foreach ($raid->usersNotResponded as $user)
+                    @include('frontend.user.partials.username', ['author' => $user])
+                @endforeach
+            </div>
 
             <hr />
 
