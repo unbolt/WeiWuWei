@@ -25,7 +25,8 @@
         "riari/laravel-forum-frontend": "~1.0",
         "haleks/laravel-markdown": "^0.2.0",
         "guzzlehttp/guzzle": "^6.2",
-        "slynova/laravel-commentable": "^2.0"
+        "slynova/laravel-commentable": "^2.0",
+        "fedeisas/laravel-mail-css-inliner": "1.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
