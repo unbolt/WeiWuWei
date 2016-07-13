@@ -39,9 +39,9 @@
                 {!! Form::label('date', 'Date', ['class' => 'col-lg-2 control-label']) !!}
                 <div class="col-lg-4">
                     @if(isset($raid))
-                        {!! Form::date('date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
+                        {!! Form::date('date', $raid->date->format('Y-m-d'), ['class' => 'form-control']) !!}
                     @else
-                        {!! Form::date('date', null, ['class' => 'form-control']) !!}
+                        {!! Form::date('date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
                     @endif
                 </div>
             </div>
