@@ -2,20 +2,6 @@
 Route::group([
     'prefix'     => 'raid'
 ], function() {
-    /*
-    Route::resource('/', 'Raid\RaidController',
-            [
-                'names'  =>
-                    [
-                        'index' => 'admin.raid.index',
-                        'create' => 'admin.raid.create',
-                        'store' => 'admin.raid.store',
-                        'update' => 'admin.raid.update'
-                    ]
-            ]
-        );
-        */
-
 
     Route::get('/', [
             'as' => 'admin.raid.index',

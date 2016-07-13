@@ -71,7 +71,7 @@
                     @foreach ($news as $article)
                         <div class="col-md-4">
                             <div class="news-article">
-                                <img src="/news/image/small/{{ $latest_news->id }}" class="img-responsive">
+                                <img src="/news/image/small/{{ $article->id }}" class="img-responsive">
 
                                 <h4>{{ $article->title }} <span class="small text-muted">{{ $article->created_at->format('jS F Y') }}</span></h4>
 
