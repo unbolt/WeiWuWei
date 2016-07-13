@@ -46,39 +46,44 @@
 @stop
 
 @section('homepage-news')
+
     <section class="homepage-news">
-        <div class="latest-news" style="background-image: url('/news/image/blur/{{ $latest_news->id }}');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-right">
-                        <h2>{{ $latest_news->title }}</h2>
-                        <h4 class="text-muted">{{ $latest_news->created_at->format('jS F Y') }}</h4>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="post-content">
-                            {% Forum::render($latest_news->content) %}
+        @if( $latest_news )
+            <div class="latest-news" style="background-image: url('/news/image/blur/{{ $latest_news->id }}');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-right">
+                            <h2>{{ $latest_news->title }}</h2>
+                            <h4 class="text-muted">{{ $latest_news->created_at->format('jS F Y') }}</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="post-content">
+                                {% Forum::render($latest_news->content) %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="row news-articles">
-                @foreach ($news as $article)
-                    <div class="col-md-4">
-                        <div class="news-article">
-                            <img src="/news/image/small/{{ $latest_news->id }}" class="img-responsive">
+        @endif
+        @if ($news)
+            <div class="container">
+                <div class="row news-articles">
+                    @foreach ($news as $article)
+                        <div class="col-md-4">
+                            <div class="news-article">
+                                <img src="/news/image/small/{{ $latest_news->id }}" class="img-responsive">
 
-                            <h4>{{ $article->title }} <span class="small text-muted">{{ $article->created_at->format('jS F Y') }}</span></h4>
+                                <h4>{{ $article->title }} <span class="small text-muted">{{ $article->created_at->format('jS F Y') }}</span></h4>
 
-                            {% Forum::render($article->content) %}
+                                {% Forum::render($article->content) %}
 
-                            <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+                                <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
-        </div>
+        @endif
     </section>
 @stop
 
