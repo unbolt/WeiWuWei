@@ -19,7 +19,15 @@ class RaidController extends Controller
      */
     public function index()
     {
-        return view('backend.raid.index');
+
+        // Get the most recent 20 raids
+
+        // TODO: Do some kind of analysis and/or viewing of all the old raids
+
+        $raids = Raid::orderBy('created_at', 'DESC')->limit(20)->get();
+
+        return view('backend.raid.index')
+                ->with('raids', $raids);
     }
 
     public function create() {
@@ -79,5 +87,15 @@ class RaidController extends Controller
         }
 
         throw new GeneralException('Computer says no. Check the logs.');
+    }
+
+    public function destroy($id) {
+        $raid = Raid::find($id);
+        // Delete any signs associated with this raid
+        $raid->signs()->delete();
+        // Delete the raid itself
+        $raid->delete();
+        // Send them back to start.
+        return redirect()->route('admin.raid.index')->withFlashSuccess('Raid deleted.');
     }
 }

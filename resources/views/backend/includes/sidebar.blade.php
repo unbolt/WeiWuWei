@@ -12,8 +12,8 @@
                 </li>
             @endauth
 
-            <li class="{{ Active::pattern('admin/raids/*') }}">
-                <a href="{!!url('admin/raids')!!}"><span>Raids</span></a>
+            <li class="{{ Active::pattern('raid/*') }}">
+                <a href="{!!url('admin/raid')!!}"><span>Raids</span></a>
             </li>
 
             @permission('create-news')
