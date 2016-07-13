@@ -17,7 +17,7 @@
         @yield('after-styles-end')
 
         <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
-        
+
         <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
@@ -51,6 +51,8 @@
                 @yield('post-content')
             </div>
         </section>
+
+        @yield('homepage-news')
 
         @include('frontend.includes.footer')
 

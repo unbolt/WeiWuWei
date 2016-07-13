@@ -8057,7 +8057,9 @@ section {
     width: 100%;
     height: 0;
     bottom: 0;
-    content: ''; }
+    content: '';
+    left: 0;
+    z-index: 999; }
   .header .navbar {
     border: 0px; }
     .header .navbar.navbar-default {
@@ -8067,7 +8069,8 @@ section {
   background-image: url("/images/alliance_right.png");
   background-repeat: no-repeat;
   background-position: right center;
-  background-size: auto 250px; }
+  background-size: auto 250px;
+  min-height: 250px; }
 
 .footer {
   background-image: url("/images/illidan.png");
@@ -8086,7 +8089,9 @@ section {
     height: 0;
     top: 0;
     content: '';
-    margin-top: -1px; }
+    margin-top: -1px;
+    left: 0;
+    z-index: 999; }
   .footer i {
     line-height: 134px;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); }
@@ -8100,6 +8105,93 @@ section {
     .footer ol li {
       text-transform: uppercase;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8); }
+
+.raid-progress {
+  padding-top: 40px; }
+  .raid-progress h3 {
+    color: #468C58;
+    font-weight: bold; }
+  .raid-progress h4 {
+    color: #468C58;
+    text-transform: uppercase; }
+
+.homepage-news .latest-news {
+  min-height: 300px;
+  background-size: cover;
+  position: 50% 50%;
+  position: relative;
+  position: relative; }
+  .homepage-news .latest-news::after {
+    padding: 3.875% 0 0;
+    margin-bottom: -1px;
+    background-position: 50%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="30"><polygon points="0,30 1600,0 1600,30" style="fill:rgb(245, 245, 245);stroke:rgb(245, 245, 245);stroke-width:0"></polygon></svg>');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    content: '';
+    left: 0;
+    z-index: 999; }
+  .homepage-news .latest-news::before {
+    padding: 2.875% 0 0;
+    background-position: 50%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="30"><polygon points="30,0 1600,0 1600,30" style="fill:rgb(245, 245, 245);stroke:rgb(245, 245, 245);stroke-width:0"></polygon></svg>');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    content: '';
+    margin-top: -1px;
+    left: 0;
+    z-index: 999; }
+  .homepage-news .latest-news h2 {
+    margin-top: 60px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    font-size: 3em;
+    text-transform: uppercase; }
+  .homepage-news .latest-news h4 {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase; }
+  .homepage-news .latest-news .post-content {
+    position: relative;
+    min-height: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 1.1em; }
+
+.homepage-news .news-articles .news-article {
+  max-height: 420px;
+  position: relative;
+  overflow: hidden; }
+  .homepage-news .news-articles .news-article .read-more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 30px 0;
+    /* "transparent" only works here because == rgba(0,0,0,0) */
+    background-image: linear-gradient(to bottom, transparent, #f5f5f5); }
+
+.homepage-news .news-articles h4 {
+  font-size: 1.4em;
+  text-transform: uppercase; }
+
+.homepage-news .news-articles .article-image {
+  height: 50px;
+  background-size: cover;
+  position: 50% 50%;
+  position: relative; }
 
 .comment .character-name {
   font-size: 1.1em;

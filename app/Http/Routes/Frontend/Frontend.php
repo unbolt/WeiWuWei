@@ -6,6 +6,11 @@
 Route::get('/', 'FrontendController@index')->name('frontend.index');
 Route::get('/roster', 'FrontendController@roster')->name('frontend.roster');
 
+// Image routes - for the news stuff
+Route::get('/news/image/{id}', 'ImageController@show');
+Route::get('/news/image/blur/{id}', 'ImageController@blur');
+Route::get('/news/image/small/{id}', 'ImageController@small');
+
 /* Frontend raid controllers */
 Route::group(['middleware' => 'access.routeNeedsPermission:access-raids'], function()
 {

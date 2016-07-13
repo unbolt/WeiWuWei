@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Jleagle\BattleNet\Warcraft;
 use App\Models\Access\Role\Role;
+use App\Models\News;
 
 /**
  * Class FrontendController
@@ -17,19 +18,15 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        javascript()->put([
-            'test' => 'it works!',
-        ]);
+        // Get the latest news post
+        $latest_news = News::orderBy('created_at', 'desc')->first();
 
-        $warcraft = new Warcraft(
-            env('BLIZZ_API_KEY'),
-            'EU',
-            'EN_GB'
-        );
+        // Get some other bits of news
+        $news = News::orderBy('created_at', 'desc')->skip(1)->take(3)->get();
 
-        $realms = $warcraft->getRealms();
-
-        return view('frontend.index');
+        return view('frontend.index')
+                ->with('latest_news', $latest_news)
+                ->with('news', $news);
     }
 
     public function roster()

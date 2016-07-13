@@ -5,7 +5,7 @@
     <h1><em>Sanka, Ya Dead?</em></h1>
 
     <p>
-        Yeah mon!
+        <em>Yeah mon!</em>
     </p>
 
     <p>

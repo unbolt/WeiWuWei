@@ -195,6 +195,7 @@ return [
         Haleks\Markdown\MarkdownServiceProvider::class,
         Slynova\Commentable\ServiceProvider::class,
         Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Has to override the Collective\Html\HtmlServiceProvider form singleton
@@ -256,5 +257,6 @@ return [
         'Html'        => Collective\Html\HtmlFacade::class,
         'Socialite'   => Laravel\Socialite\Facades\Socialite::class,
         'Markdown'    => Haleks\Markdown\Facades\Markdown::class,
+        'Image'       => Intervention\Image\Facades\Image::class
     ],
 ];
