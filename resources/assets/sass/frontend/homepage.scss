@@ -61,6 +61,11 @@
             position: relative;
             overflow: hidden;
 
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
             .read-more {
                 position: absolute;
                 bottom: 0;
