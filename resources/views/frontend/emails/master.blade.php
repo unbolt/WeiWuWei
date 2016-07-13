@@ -191,7 +191,7 @@ ol li {
           <tr>
               <td>
                   <center>
-                      Logo needs to be added here.
+                      <img src="{{ url('favicon-128.png') }}" width="128" alt="Wei Wu Wei" />
                   </center>
               </td>
           </tr>
