@@ -3,7 +3,7 @@ $(function(){
     var checkboxes = $('table tbody input[type=checkbox]');
     var actions = $('[data-actions]');
     var forms = $('[data-actions-form]');
-    var confirmString = "{{ trans('forum::general.generic_confirm') }}";
+    var confirmString = "Are you sure?";
 
     function setToggleStates() {
         checkboxes.prop('checked', toggle.is(':checked')).change();
