@@ -44,7 +44,15 @@
             <h2 class="text-muted">Past Raids</h2>
 
             @foreach ($past_raids as $raid)
-                {{ $raid->title }}
+                <h5>
+                    <a href="/raids/{{ $raid->id}}-{{ str_slug($raid->title, '-') }}">
+                        {{ $raid->title }} @ {{ $raid->location }}
+
+                        <div class="text-muted">
+                            {{ $raid->date->format('l jS F') }}
+                        </div>
+                    </a>
+                </h5>
             @endforeach
         </div>
     </div>
