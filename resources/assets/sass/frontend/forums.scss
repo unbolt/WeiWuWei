@@ -6,11 +6,13 @@ textarea {
     opacity: 0.65;
 }
 
+
 /*
     THREAD VIEW STYLES
 */
 
 .thread-title {
+
     .lead {
         margin-bottom: 5px;
     }
@@ -18,6 +20,10 @@ textarea {
         float: left;
         margin-right: 5px;
     }
+}
+
+.pagination {
+    margin: 0px !important;
 }
 
 /*

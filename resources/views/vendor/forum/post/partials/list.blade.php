@@ -1,5 +1,5 @@
 <tr id="post-{{ $post->sequenceNumber }}" class="post-bit {{ $post->trashed() ? 'deleted' : '' }}">
-    <td class="character">
+    <td class="character hidden-xs hidden-sm">
         <div class="character-profile" @if($post->author->character_name && $post->author->character_server) data-character-name="{!! $post->author->character_name !!}" data-character-server="{!! $post->author->character_server !!}" @endif>
             <div class="character-name">
                 @if ($post->author->character_name)
@@ -13,6 +13,17 @@
 
     </td>
     <td class="post-content">
+
+        <div class="hidden-md hidden-lg">
+            <div class="character-name" @if($post->author->character_name && $post->author->character_server) data-character-name="{!! $post->author->character_name !!}" data-character-server="{!! $post->author->character_server !!}" @endif>
+                @if ($post->author->character_name)
+                    <div class="character-class">{!! $post->author->character_name !!}</div>
+                @else
+                    {!! $post->author->name !!}
+                @endif
+            </div>
+        </div>
+
         @if (!is_null($post->parent))
             <p>
                 <strong>
@@ -36,16 +47,26 @@
             {% Forum::render($post->content) %}
         @endif
 
+        <div class="hidden-md hidden-lg">
+            @if (!$post->trashed())
+                @can ('edit', $post)
+                    (<a href="{{ Forum::route('post.edit', $post) }}">{{ trans('forum::general.edit') }}</a>)
+                @endcan
+            @endif
+        </div>
+
         @if ($post->author->signature)
-            <hr>
-            <div class="text-muted">
-                {% Forum::render($post->author->signature) %}
+            <div class="hidden-xs hidden-sm">
+                <hr>
+                <div class="text-muted">
+                    {% Forum::render($post->author->signature) %}
+                </div>
             </div>
         @endif
     </td>
 </tr>
 <tr>
-    <td>
+    <td class="hidden-xs hidden-sm">
         @if (!$post->trashed())
             @can ('edit', $post)
                 <a href="{{ Forum::route('post.edit', $post) }}">{{ trans('forum::general.edit') }}</a>

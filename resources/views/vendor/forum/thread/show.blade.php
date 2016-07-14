@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-xs-4">
                     <div class="btn-group" role="group">
-                        <a href="{{ Forum::route('post.create', $thread) }}" class="btn btn-primary">{{ trans('forum::general.new_reply') }}</a>
+                        <a href="{{ Forum::route('post.create', $thread) }}" class="btn btn-primary hidden-xs">{{ trans('forum::general.new_reply') }}</a>
                         <a href="#quick-reply" class="btn btn-primary">{{ trans('forum::general.quick_reply') }}</a>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
         @endcan
 
         <table class="table {{ $thread->trashed() ? 'deleted' : '' }}">
-            <thead>
+            <thead class="hidden-xs hidden-sm">
                 <tr>
                     <th class="col-md-2">
                         {{ trans('forum::general.author') }}
