@@ -64,8 +64,6 @@ class Raid extends Model
 
                 // The raid hasn't started yet, there won't be a log
 
-                echo 'Not making a call!<br />';
-
                 return false;
 
             } else {
