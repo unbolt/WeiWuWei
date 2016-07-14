@@ -23,7 +23,7 @@
         "doctrine/dbal": "^2.5",
         "riari/laravel-forum": "~3.0",
         "riari/laravel-forum-frontend": "~1.0",
-        "guzzlehttp/guzzle": "^6.2",
+        "guzzlehttp/guzzle": "~6.0",
         "slynova/laravel-commentable": "^2.0",
         "fedeisas/laravel-mail-css-inliner": "1.5",
         "intervention/image": "^2.3",

@@ -44,15 +44,25 @@
             <h2 class="text-muted">Past Raids</h2>
 
             @foreach ($past_raids as $raid)
-                <h5>
-                    <a href="/raids/{{ $raid->id}}-{{ str_slug($raid->title, '-') }}">
-                        {{ $raid->title }} @ {{ $raid->location }}
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h5>
+                            <a href="/raids/{{ $raid->id}}-{{ str_slug($raid->title, '-') }}">
+                                {{ $raid->title }} @ {{ $raid->location }}
 
-                        <div class="text-muted">
-                            {{ $raid->date->format('l jS F') }}
-                        </div>
-                    </a>
-                </h5>
+                                <div class="text-muted">
+                                    {{ $raid->date->format('l jS F') }}
+                                </div>
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="col-sm-2 text-right">
+                        @if($raid->logId)
+                            <h5><a href="https://www.warcraftlogs.com/reports/{{ $raid->logId }}">Log</a></h5>
+                        @endif
+                    </div>
+                </div>
+
             @endforeach
         </div>
     </div>

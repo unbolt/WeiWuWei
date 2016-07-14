@@ -15,9 +15,28 @@
     <div class="row">
         <div class="col-md-8">
             <h2>{{ $raid->title }} <span class="text-muted">{{ $raid->date->format('l jS') }}</span></h2>
-            <h3>{{ $raid->location }}</h3>
+            <h2>{{ $raid->location }}</h2>
 
             {!! Markdown::parse($raid->description) !!}
+
+            @if($raid->logId)
+                <h3>Raid Results <small><a href="https://www.warcraftlogs.com/reports/{{ $raid->logId }}">Full Log</a></small></h3>
+
+                @foreach($raid->log->fights as $fight)
+                    @if($fight->boss != 0)
+                        <h5 class="@if($fight->kill) boss-kill @else boss-wipe @endif">
+                            <a href="https://www.warcraftlogs.com/reports/{{ $raid->logId }}#type=summary&fight={{ $fight->id }}">
+                                {{ $fight->name }}
+                                @if($fight->kill)
+                                    <span class="text-muted">Kill</span>
+                                @else
+                                    <span class="text-muted">{{ round($fight->bossPercentage / 100) }}%</span>
+                                @endif
+                            </a>
+                        </h5>
+                    @endif
+                @endforeach
+            @endif
 
             <hr />
 

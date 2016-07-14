@@ -26,6 +26,16 @@
     }
 }
 
+.boss-wipe {
+    a {
+        color: invert($global-accent);
+    }
+}
+
+.boss-kill {
+    font-weight: bold;
+}
+
 .pending-response {
     >.character-name {
         display: inline-block;
