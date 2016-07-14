@@ -58,7 +58,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="post-content">
-                                {% Forum::render($latest_news->content) %}
+                                {!! Markdown::parse($latest_news->content) !!}
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
 
                                 <h4>{{ $article->title }} <span class="small text-muted">{{ $article->created_at->format('jS F Y') }}</span></h4>
 
-                                {% Forum::render($article->content) %}
+                                {!! Markdown::parse($article->content) !!}
 
                                 <p class="read-more"><a href="#" class="btn btn-primary">Read More</a></p>
                             </div>

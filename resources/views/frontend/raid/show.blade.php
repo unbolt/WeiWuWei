@@ -17,7 +17,7 @@
             <h2>{{ $raid->title }} <span class="text-muted">{{ $raid->date->format('l jS') }}</span></h2>
             <h3>{{ $raid->location }}</h3>
 
-            {% Forum::render($raid->description) %}
+            {!! Markdown::parse($raid->description) !!}
 
             <hr />
 

@@ -44,7 +44,7 @@
         @if ($post->trashed())
             <span class="label label-danger">{{ trans('forum::general.deleted') }}</span>
         @else
-            {% Forum::render($post->content) %}
+            {!! Markdown::parse($post->content) !!}
         @endif
 
         <div class="hidden-md hidden-lg">
@@ -59,7 +59,7 @@
             <div class="hidden-xs hidden-sm">
                 <hr>
                 <div class="text-muted">
-                    {% Forum::render($post->author->signature) %}
+                    {!! Markdown::parse($post->author->signature) !!}
                 </div>
             </div>
         @endif
