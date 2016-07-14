@@ -6,7 +6,7 @@
         <div class="text-muted">
             {{ $comment->created_at->format('d/m/y H:i') }}:
         </div>
-        {% Forum::render($comment->body) %}
+        {!! Markdown::parse($comment->body) !!}
     </div>
 </div>
 <hr />
