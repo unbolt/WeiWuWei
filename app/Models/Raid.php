@@ -17,7 +17,7 @@ class Raid extends Model
 
     protected $dates = ['date', 'created_at', 'updated_at'];
 
-    protected $appends = ['raidStarted', 'signsOpen', 'totalSigns', 'tankCount', 'healerCount', 'dpsCount', 'signPercent', 'usersAttending', 'usersNotAttending', 'usersNotResponded'];
+    protected $appends = ['hasResponded', 'raidStarted', 'signsOpen', 'totalSigns', 'tankCount', 'healerCount', 'dpsCount', 'signPercent', 'usersAttending', 'usersNotAttending', 'usersNotResponded'];
 
     public function signs()
     {
@@ -38,6 +38,22 @@ class Raid extends Model
         });
 
         return $groups;
+    }
+
+    public function getHasRespondedAttribute()
+    {
+        // Find out if the currently auth'd user has
+        // responded to a raid or not, this is for displaying and
+        // not for internal checks. Obviously.
+        $responded = $this->signs()
+                        ->where('user_id', '=', access()->user()->id)
+                        ->first();
+
+        if($responded) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function getSignsOpenAttribute()

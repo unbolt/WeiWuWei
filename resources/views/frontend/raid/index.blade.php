@@ -12,7 +12,19 @@
             @foreach ($upcoming_raids as $raid)
                 <div class="row">
                     <div class="col-sm-12">
-                        <a href="/raids/{{ $raid->id}}-{{ str_slug($raid->title, '-') }}"><h3><span class="text-muted">{{ $raid->date->format('l jS') }}</span> {{ $raid->title }} @ {{ $raid->location }}</h3></a>
+                        <a href="/raids/{{ $raid->id}}-{{ str_slug($raid->title, '-') }}">
+                            <h3>
+                                @if( $raid->hasResponded )
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                @else
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                @endif
+                                {{ $raid->title }} @ {{ $raid->location }}
+                            </h3>
+                            <h4 class="text-muted">
+                                {{ $raid->date->format('l jS F') }}
+                            </h4>
+                        </a>
                     </div>
                 </div>
                 <div class="row">
