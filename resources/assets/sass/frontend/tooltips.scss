@@ -1,0 +1,19 @@
+.wowhead-tooltip {
+    background: rgba(0,0,0,0.9);
+}
+
+.wowhead-tooltip td,
+.wowhead-tooltip th {
+    background: none !important;
+    font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+    color: white
+}
+
+.wowhead-tooltip p div {
+    // This is the style for the icon
+    width: 44px;
+    height: 44px;
+    background-image: none !important;
+}
