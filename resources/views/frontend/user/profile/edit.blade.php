@@ -29,9 +29,13 @@
                         @endif
 
                         <div class="form-group">
-                            {!! Form::label('signature', 'Signature', ['class' => 'col-md-4 control-label']) !!}
+
+                            <div class="col-md-4 text-right">
+                                {!! Form::label('signature', 'Signature', ['class' => 'control-label']) !!}
+                            </div>
                             <div class="col-md-6">
                                 {!! Form::input('signature', 'signature', null, ['class' => 'form-control', 'placeholder' => 'Signature']) !!}
+                                <div class="text-muted">Markdown accepted.</div>
                             </div>
                         </div>
 
@@ -39,6 +43,7 @@
                             {!! Form::label('twitter', 'Twitter', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
                                 {!! Form::input('twitter', 'twitter', null, ['class' => 'form-control', 'placeholder' => 'Twitter']) !!}
+                                <div class="text-muted">http://twitter.com/{{ $user->twitter }}</div>
                             </div>
                         </div>
 
@@ -46,6 +51,7 @@
                             {!! Form::label('twitch', 'Twitch', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
                                 {!! Form::input('twitch', 'twitch', null, ['class' => 'form-control', 'placeholder' => 'Twitch']) !!}
+                                <div class="text-muted">http://twitch.tv/{{ $user->twitch }}</div>
                             </div>
                         </div>
 
@@ -53,6 +59,7 @@
                             {!! Form::label('youtube', 'YouTube', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
                                 {!! Form::input('youtube', 'youtube', null, ['class' => 'form-control', 'placeholder' => 'YouTube']) !!}
+                                <div class="text-muted">http://youtube.com/{{ $user->youtube }}</div>
                             </div>
                         </div>
 
