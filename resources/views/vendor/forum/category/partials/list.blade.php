@@ -6,7 +6,11 @@
         </td>
     @else
         <td>
-            <p class="{{ isset($titleClass) ? $titleClass : '' }}"><a href="{{ Forum::route('category.show', $category) }}">{{ $category->title }}</a></p>
+            <p class="{{ isset($titleClass) ? $titleClass : '' }}"><a href="{{ Forum::route('category.show', $category) }}">{{ $category->title }}</a>
+                @if($category->hasNewPosts)
+                    <span class="text-muted">({{$category->hasNewPosts}})</span>
+                @endif
+            </p>
             <div class="hidden-sm hidden-xs">
                 <span class="text-muted">{{ $category->description }}</span>
             </div>

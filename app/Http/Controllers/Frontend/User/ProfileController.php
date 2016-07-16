@@ -48,6 +48,10 @@ class ProfileController extends Controller
              'en_GB'
          );
 
+         if(!$server) {
+             $server = 'the-shatar';
+         }
+
          $character = $warcraft->getCharacter($server, $name, ['audit']);
 
          return response()->json($character);
