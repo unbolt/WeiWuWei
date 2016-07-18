@@ -28,10 +28,10 @@
             <p>
                 <strong>
                     In response to
-                    @if ($post->author->character_name)
-                        {!! $post->author->character_name !!}
+                    @if ($post->parent->author->character_name)
+                        {!! $post->parent->author->character_name !!}
                     @else
-                        {!! $post->author->name !!}
+                        {!! $post->parent->author->name !!}
                     @endif
                     (<a href="{{ Forum::route('post.show', $post->parent) }}">{{ trans('forum::posts.view') }}</a>):
                 </strong>
