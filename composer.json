@@ -28,7 +28,8 @@
         "fedeisas/laravel-mail-css-inliner": "1.5",
         "intervention/image": "^2.3",
         "intervention/imagecache": "^2.3",
-        "alfredo-ramos/parsedown-extra-laravel": "~0.4"
+        "alfredo-ramos/parsedown-extra-laravel": "~0.4",
+        "greggilbert/recaptcha": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

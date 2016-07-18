@@ -196,6 +196,7 @@ return [
         Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         AlfredoRamos\ParsedownExtra\ParsedownExtraServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 
         /*
          * Has to override the Collective\Html\HtmlServiceProvider form singleton
@@ -256,7 +257,8 @@ return [
         'Gravatar'    => Creativeorange\Gravatar\Facades\Gravatar::class,
         'Html'        => Collective\Html\HtmlFacade::class,
         'Socialite'   => Laravel\Socialite\Facades\Socialite::class,
-        'Markdown'  => AlfredoRamos\ParsedownExtra\Facades\ParsedownExtra::class,
-        'Image'       => Intervention\Image\Facades\Image::class
+        'Markdown'    => AlfredoRamos\ParsedownExtra\Facades\ParsedownExtra::class,
+        'Image'       => Intervention\Image\Facades\Image::class,
+        'Recaptcha'   => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 ];
