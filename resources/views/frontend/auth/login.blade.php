@@ -9,6 +9,20 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{{ trans('labels.frontend.auth.login_box_title') }}</div>
 
+                <div class="col-md-12">
+                <h3>Important! Read this!</h3>
+
+                <p>
+                    If you had an account on the old forums, then it still exists - you just need to reset your password using the link below.
+                    Do not make a new account! Contact me on <a href="http://twitter.com/_ritual">Twitter</a> or in-game and I can sort it out for you if you
+                    get stuck! Note that hotmail email addresses seem to take their sweet time receiving mail.
+                </p>
+                <p>
+                    I will be monitoring things for a couple of days and upgrading accounts to have members access as they are activated by resetting your passwords.
+                    There is also a thread in the General forums you can post in to request access.
+                </p>
+            </div>
+
                 <div class="panel-body">
 
                     {!! Form::open(['url' => 'login', 'class' => 'form-horizontal']) !!}
