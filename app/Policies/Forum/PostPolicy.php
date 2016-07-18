@@ -12,6 +12,11 @@ class PostPolicy extends \Riari\Forum\Policies\PostPolicy
      */
     public function edit($user, Post $post)
     {
+
+        if($user->hasRole('Administrator')) {
+            return true;
+        }
+
         return $user->id == $post->author_id;
     }
     /**
