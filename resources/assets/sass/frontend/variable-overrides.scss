@@ -12,3 +12,7 @@ $navbar-default-bg          : rgba(255,255,255,0.4);
 
 // Breadcrumb override
 $breadcrumb-bg  : darken($global-background, 5%);
+
+// Blockquote overrides
+$blockquote-font-size:  inherit;
+$blockquote-border-color: $global-accent;
