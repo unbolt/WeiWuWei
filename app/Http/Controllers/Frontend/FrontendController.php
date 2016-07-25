@@ -38,19 +38,19 @@ class FrontendController extends Controller
             if($item->character_role == 'tank') {
                 return true;
             }
-        });
+        })->shuffle();
 
         $healers = $users->filter(function ($item) {
             if($item->character_role == 'healer') {
                 return true;
             }
-        });
+        })->shuffle();
 
         $dps = $users->filter(function($item) {
             if($item->character_role != 'tank' && $item->character_role != 'healer') {
                 return true;
             }
-        });
+        })->shuffle();
 
         return view('frontend.roster')
             ->with('tanks', $tanks)
