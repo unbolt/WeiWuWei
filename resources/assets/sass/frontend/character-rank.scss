@@ -1,0 +1,16 @@
+.role-officer {
+    .character-avatar {
+        position: relative;
+
+        &::before {
+            content: '\f005';
+            font: normal normal normal 14px/1 FontAwesome;
+            display: block;
+            position: absolute;
+            color: $global-accent;
+            left: 50%;
+            margin-left: -40px;
+            top: 5px;
+        }
+    }
+}

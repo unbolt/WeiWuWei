@@ -1,6 +1,6 @@
 <tr id="post-{{ $post->sequenceNumber }}" class="post-bit {{ $post->trashed() ? 'deleted' : '' }}">
     <td class="character hidden-xs hidden-sm">
-        <div class="character-profile" @if($post->author->character_name && $post->author->character_server) data-character-name="{!! $post->author->character_name !!}" data-character-server="{!! $post->author->character_server !!}" @endif>
+        <div class="character-profile @if($post->author->hasRole('Officer')) role-officer @endif" @if($post->author->character_name && $post->author->character_server) data-character-name="{!! $post->author->character_name !!}" data-character-server="{!! $post->author->character_server !!}" @endif>
             <div class="character-name">
                 @if ($post->author->character_name)
                     <div class="character-class">{!! $post->author->character_name !!}</div>
