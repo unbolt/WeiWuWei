@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Access\User\Traits\Attribute\UserAttribute;
 use App\Models\Access\User\Traits\Relationship\UserRelationship;
+use App\Models\Raid;
+use App\Models\Sign;
+use Carbon\Carbon;
 
 /**
  * Class User
@@ -41,7 +44,7 @@ class User extends Authenticatable
     public function getInviteMacroAttribute()
     {
         if($this->character_server == 'the-shatar') {
-            $server_formatted = 'theSha\'tar';
+            $server_formatted = 'TheSha\'tar';
         } else if($this->character_server == 'steamwheedle-cartel') {
             $server_formatted = 'SteamwheedleCartel';
         } else if($this->character_server == 'moonglade') {
@@ -53,7 +56,29 @@ class User extends Authenticatable
         } else {
             return false;
         }
+    }
 
+    public function getPendingRaidsAttribute()
+    {
+        // Get list of raids in the future which the user has yet to sign to
+        $now = Carbon::now();
+        $raids = Raid::where('date', '>', $now)->get();
 
+        if($raids) {
+            $unresponded = 0;
+            foreach($raids as $raid) {
+                $responded = $raid->signs()
+                                ->where('user_id', '=', access()->user()->id)
+                                ->first();
+
+                if(!$responded) {
+                    $unresponded++;
+                }
+            }
+
+            return $unresponded;
+        } else {
+            return false;
+        }
     }
 }

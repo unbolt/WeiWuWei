@@ -9,7 +9,13 @@
                 <li>{!! link_to_route('frontend.roster', 'Roster') !!}</li>
                 <li>{!! link_to('forums', 'Forums') !!}</li>
                 @roles('Raider')
-                    <li>{!! link_to('raids', 'Raids') !!}</li>
+                    <li>
+                        @if(auth()->user()->pendingRaids)
+                            <a href="/raids">Raids ({{auth()->user()->pendingRaids }})</a>
+                        @else
+                            {!! link_to('raids', 'Raids') !!}
+                        @endif
+                    </li>
                 @endauth
             </ol>
         </div>
