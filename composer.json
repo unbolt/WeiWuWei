@@ -29,7 +29,8 @@
         "intervention/image": "^2.3",
         "intervention/imagecache": "^2.3",
         "alfredo-ramos/parsedown-extra-laravel": "~0.4",
-        "greggilbert/recaptcha": "^2.1"
+        "greggilbert/recaptcha": "^2.1",
+        "team-reflex/discord-php": "^3.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -10,6 +10,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                @roles('Raider')
+                        @if(auth()->user()->pendingRaids)
+                            <div class="hidden-sm hidden-md hidden-lg">
+                                <a class="navbar-brand" href="/raids">Raids ({{auth()->user()->pendingRaids }})</a>
+                            </div>
+                        @endif
+                @endauth
             </div><!--navbar-header-->
 
             <div class="collapse navbar-collapse" id="frontend-navbar-collapse">
