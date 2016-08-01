@@ -6,7 +6,7 @@
         <div class="col-md-2">
             <ol>
                 <li>{!! link_to_route('frontend.index', 'Home') !!}</li>
-                <li>{!! link_to_route('frontend.roster', 'Roster') !!}</li>
+                <!--<li>{!! link_to_route('frontend.roster', 'Roster') !!}</li>-->
                 <li>{!! link_to('forums', 'Forums') !!}</li>
                 @roles('Raider')
                     <li>
