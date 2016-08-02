@@ -67,7 +67,7 @@
                 <thead>
                     <tr>
                         <th>{{ trans('forum::general.subject') }}</th>
-                        <th class="col-md-2 text-right hidden-sm hidden-xs">{{ trans('forum::general.replies') }}</th>
+                        <th class="col-md-2 text-right hidden-sm hidden-xs">Posts</th>
                         <th class="col-md-2 text-right">{{ trans('forum::posts.last') }}</th>
                         @can ('manageThreads', $category)
                             <th class="col-md-1 text-right"><input type="checkbox" data-toggle-all></th>

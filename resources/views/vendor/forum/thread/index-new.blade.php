@@ -8,7 +8,7 @@
             <thead>
                 <tr>
                     <th>{{ trans('forum::general.subject') }}</th>
-                    <th class="col-md-2 hidden-sm hidden-xs">{{ trans('forum::general.replies') }}</th>
+                    <th class="col-md-2 hidden-sm hidden-xs">Posts</th>
                     <th class="col-md-2 text-right">{{ trans('forum::posts.last') }}</th>
                 </tr>
             </thead>
