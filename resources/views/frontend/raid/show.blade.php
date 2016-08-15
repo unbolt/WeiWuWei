@@ -70,18 +70,22 @@
                 @endforeach
             @endif
 
-            <div id="quick-reply">
-                <form method="POST" action="/raids/{{ $raid->id }}/comments">
-                    {!! csrf_field() !!}
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="quick-reply">
+                        <form method="POST" action="/raids/{{ $raid->id }}/comments">
+                            {!! csrf_field() !!}
 
-                    <div class="form-group">
-                        <textarea name="body" class="form-control">{{ old('body') }}</textarea>
-                    </div>
+                            <div class="form-group">
+                                <textarea name="body" class="form-control">{{ old('body') }}</textarea>
+                            </div>
 
-                    <div class="text-right">
-                        <button type="submit" class="btn btn-success pull-right">Post Comment</button>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-success pull-right">Post Comment</button>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
         <div class="col-md-4">
