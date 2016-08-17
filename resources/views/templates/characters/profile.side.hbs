@@ -5,7 +5,11 @@
             {{ name }}
         </div>
         <div class="character-server hidden-sm hidden-xs">
-            {{ realm }}
+            {{#if tag }}
+                {{ tag }}
+            {{else}}
+                {{ realm }}
+            {{/if}}
         </div>
         <div class="character-avatar hidden-sm hidden-xs">
             <img src="{{ thumbnail }}" class="img-circle" />

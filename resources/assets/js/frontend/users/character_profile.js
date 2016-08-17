@@ -12,6 +12,7 @@ $(function(){
         // Check if this profile has a character name and server associated with it
         var characterName = $(this).attr('data-character-name');
         var characterServer = $(this).attr('data-character-server');
+        var characterTag = $(this).attr('data-character-tag');
 
         if(characterName && characterServer) {
             // There is a name and a server
@@ -19,8 +20,6 @@ $(function(){
             var cacheName = 'char-'+characterName+'-'+characterServer;
 
             if(data = $.jStorage.get(cacheName)) {
-
-                console.log(data);
 
                 if ($(this).hasClass('character-profile-small')) {
                     // Add the profile fields to the data array so handlebars processes it properly
@@ -31,6 +30,8 @@ $(function(){
 
                     var template = WEI.templates.characters.profile.roster(data);
                 } else {
+
+                    data.tag = characterTag;
                     var template = WEI.templates.characters.profile.side(data);
                 }
 
@@ -55,6 +56,9 @@ $(function(){
 
                             var template = WEI.templates.characters.profile.roster(data);
                         } else {
+
+                            data.tag = $(this).attr('data-character-tag');
+
                             var template = WEI.templates.characters.profile.side(data);
                         }
 

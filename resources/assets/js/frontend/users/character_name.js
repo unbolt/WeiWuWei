@@ -19,6 +19,7 @@ $(function(){
             var cacheName = 'char-'+characterName+'-'+characterServer;
 
             if(data = $.jStorage.get(cacheName)) {
+
                 var template = WEI.templates.characters.profile.name(data);
                 $(this).html(template);
             } else {

@@ -8,6 +8,7 @@ use App\Http\Requests\Frontend\User\UpdateProfileRequest;
 use App\Repositories\Frontend\Access\User\UserRepositoryContract;
 use Jleagle\BattleNet\Warcraft;
 use App;
+use App\Models\Access\User\User as User;
 
 /**
  * Class ProfileController
@@ -53,6 +54,13 @@ class ProfileController extends Controller
          }
 
          $character = $warcraft->getCharacter($server, $name, ['audit']);
+
+        // Someone must own this character, so just get them
+        $user = User::where('character_name', $name)
+                ->where('character_server', $server)
+                ->first();
+
+        $character->tag = $user->tag;
 
          return response()->json($character);
 

@@ -29,6 +29,16 @@
                         @endif
 
                         <div class="form-group">
+                            <div class="col-md-4 text-right">
+                                {!! Form::label('tag', 'Tag', ['class' => 'control-label']) !!}
+                            </div>
+                            <div class="col-md-6">
+                                {!! Form::input('tag', 'tag', null, ['class' => 'form-control', 'placeholder' => 'Tag']) !!}
+                                <div class="text-muted">Appears below your character name.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
 
                             <div class="col-md-4 text-right">
                                 {!! Form::label('signature', 'Signature', ['class' => 'control-label']) !!}
