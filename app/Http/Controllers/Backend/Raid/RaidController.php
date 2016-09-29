@@ -56,17 +56,17 @@ class RaidController extends Controller
 
         if ($raid->save()) {
 
-            $bot_id = env('DISCORD_BOT_ID');
+            //$bot_id = env('DISCORD_BOT_ID');
 
             // Send message to Discord with the raid details
-            $discord = new Discord($bot_id);
-            $guild = $discord->guilds->get('id', '208102490422378496');
-            $channel = $guild->channels->get('id', '208114703426125825');
+            //$discord = new Discord($bot_id);
+            //$guild = $discord->guilds->get('id', '208102490422378496');
+            //$channel = $guild->channels->get('id', '208114703426125825');
 
-            $url = 'http://wwwguild.com/raids/'.$raid->id.'-'.str_slug($raid->title, '-');
-            $message = "**Raid Posted:** ". $raid->title . " - ". $raid->description . " " .$url;
+            //$url = 'http://wwwguild.com/raids/'.$raid->id.'-'.str_slug($raid->title, '-');
+            //$message = "**Raid Posted:** ". $raid->title . " - ". $raid->description . " " .$url;
 
-            $channel->sendMessage($message);
+            //$channel->sendMessage($message);
 
             return redirect()->route('admin.raid.index')->withFlashSuccess('Raid created.');
         }
